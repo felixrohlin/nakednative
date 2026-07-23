@@ -6,7 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-4) var(--space-7);
+  /* Source (design/LandingPage.dc.html:13) is 20px 48px. 48px matches
+     --space-7 exactly; 20px sits equidistant between --space-4 (16px) and
+     --space-5 (24px) with no matching token, so it stays a literal rather
+     than being rounded either way. */
+  padding: 20px var(--space-7);
   background: var(--surface-page);
   border-bottom: var(--border-w) solid var(--border-subtle);
 }

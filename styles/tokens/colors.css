@@ -23,6 +23,7 @@
 --surface-card:var(--nn-white);
 --surface-sunken:var(--nn-sand-100);
 --surface-inverse:var(--nn-navy-900);
+--surface-inverse-hover:var(--nn-navy-700);
 --border-subtle:var(--nn-fog-200);
 --border-strong:var(--nn-charcoal-600);
 --accent-primary:var(--nn-tan-500);

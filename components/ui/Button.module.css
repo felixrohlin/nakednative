@@ -1,0 +1,83 @@
+.button {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  /* Button.jsx source: letterSpacing '.04em'. No --tracking-* token matches
+     (--tracking-wide is .08em, --tracking-wider is .16em), kept literal. */
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: var(--border-w) solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition:
+    background var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Sizes — Button.jsx's three paddings all land exactly on the space scale. */
+.sm {
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-4);
+}
+
+.md {
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-5);
+}
+
+.lg {
+  font-size: var(--text-sm);
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Variants + hover, ported from Button.jsx's variants/hover maps. Button.jsx
+   itself writes the navy shades as raw primitive references — fine inside
+   the DS's own bundle, but this app's lint rule bans raw primitives outside
+   colors.css, so each use is routed through a semantic token instead:
+   surface-inverse and text-primary both already alias the navy-900
+   primitive; surface-inverse-hover (added to colors.css just now) aliases
+   the navy-700 hover shade, which had no existing semantic token. */
+.primary {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  border-color: var(--surface-inverse);
+}
+.primary:not(:disabled):hover {
+  background: var(--surface-inverse-hover);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+.secondary:not(:disabled):hover {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+}
+
+.accent {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+.accent:not(:disabled):hover {
+  background: var(--accent-primary-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: transparent;
+}
+.ghost:not(:disabled):hover {
+  background: var(--surface-sunken);
+}

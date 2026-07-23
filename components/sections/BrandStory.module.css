@@ -1,0 +1,26 @@
+.section {
+  /* design/LandingPage.dc.html:29 — padding: 88px 48px. 48px matches
+     --space-7 exactly; 88px falls between --space-8 (64px) and --space-9
+     (96px) with no exact match (off by 24px and 8px respectively), kept
+     literal rather than rounded to either neighbor. */
+  padding: 88px var(--space-7);
+  text-align: center;
+  /* max-width: 720px — no matching scale value, kept literal. */
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); /* 32px, exact match */
+  /* margin-bottom: 20px — equidistant --space-4 (16px)/--space-5 (24px). */
+  margin-bottom: 20px;
+}
+
+.body {
+  /* font-size: 17px — --text-base is 16px, off by 1, not exact, kept literal. */
+  font-size: 17px;
+  /* line-height: 1.6 — --leading-normal is 1.55, not exact, kept literal. */
+  line-height: 1.6;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,97 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* design/LandingPage.dc.html:19 — element height, not a --space-* value
+     (that scale is for padding/gaps, not viewport-relative element sizing).
+     640px as authored. */
+  height: 640px;
+}
+
+.media {
+  object-fit: cover;
+  object-position: 60% 30%;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  /* rgba(27,29,36,*) is --nn-navy-900's RGB triplet — var() can't be used
+     inside a gradient stop's alpha channel, so this mirrors the same raw
+     rgba(27,29,36,*) pattern already established for --shadow-* in
+     styles/tokens/spacing.css, not a new convention. */
+  background: linear-gradient(0deg, rgba(27, 29, 36, 0.55), rgba(27, 29, 36, 0) 60%);
+}
+
+.copy {
+  position: absolute;
+  left: var(--space-7); /* 48px, exact match, design/LandingPage.dc.html:22 */
+  /* bottom: 56px — equidistant between --space-7 (48px) and --space-8
+     (64px), no matching token, kept literal. */
+  bottom: 56px;
+  /* max-width: 520px — no scale value in this range at all (--space-10 tops
+     out at 128px; this is a content max-width, not spacing), kept literal. */
+  max-width: 520px;
+  color: var(--text-inverse);
+}
+
+.eyebrow {
+  /* font-size: 13px — equidistant between --text-xs (12px) and --text-sm
+     (14px), no matching token, kept literal. */
+  font-size: 13px;
+  /* letter-spacing: .2em — no --tracking-* token matches (--tracking-wide
+     is .08em, --tracking-wider is .16em), kept literal. */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  /* margin-bottom: 14px — equidistant --space-3 (12px)/--space-4 (16px). */
+  margin-bottom: 14px;
+}
+
+.headline {
+  font-family: var(--font-display);
+  /* font-size: 56px — between --text-3xl (44px) and --text-4xl (60px), no
+     matching token, kept literal. */
+  font-size: 56px;
+  line-height: var(--leading-tight); /* 1.05, exact match */
+  font-weight: var(--weight-semibold); /* 600, exact match */
+  /* margin-bottom: 20px — equidistant --space-4 (16px)/--space-5 (24px). */
+  margin-bottom: 20px;
+}
+
+.description {
+  /* font-size: 17px — --text-base is 16px, off by 1, not exact, kept literal. */
+  font-size: 17px;
+  /* line-height: 1.5 — --leading-normal is 1.55, not exact, kept literal. */
+  line-height: 1.5;
+  /* margin-bottom: 28px — equidistant --space-5 (24px)/--space-6 (32px). */
+  margin-bottom: 28px;
+  opacity: 0.92;
+}
+
+/* --bp-tablet, styles/tokens/breakpoints.css */
+@media (max-width: 960px) {
+  .hero {
+    height: 480px; /* approved tablet height, see out.md stage-1 round */
+  }
+
+  .copy {
+    left: var(--space-6); /* 32px, approved tablet contraction */
+  }
+}
+
+/* --bp-mobile, styles/tokens/breakpoints.css */
+@media (max-width: 599px) {
+  .hero {
+    /* Approved fluid rule, see out.md stage-1 round: floor 340px at 320px
+       viewport, ceiling 480px (matching tablet) at 599px viewport. */
+    height: clamp(340px, 50vw + 180px, 480px);
+  }
+
+  .headline {
+    font-size: 36px; /* approved mobile step-down */
+  }
+
+  .copy {
+    max-width: calc(100% - var(--space-7)); /* 48px, exact match */
+  }
+}

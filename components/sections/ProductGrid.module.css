@@ -1,0 +1,71 @@
+.section {
+  /* design/LandingPage.dc.html:33 — padding: 0 48px 96px. Both values are
+     exact matches: 48px = --space-7, 96px = --space-9. */
+  padding: 0 var(--space-7) var(--space-9);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  /* margin-bottom: 28px — equidistant --space-5 (24px)/--space-6 (32px),
+     no matching token, kept literal. Same 28px value recurs at
+     Hero's .description margin-bottom, BrandStory's .heading margin-bottom,
+     and this section's own grid gap below — likely an informal "28" unit
+     in the original design that never made it into the token scale. */
+  margin-bottom: 28px;
+}
+
+.title {
+  font-family: var(--font-display);
+  /* font-size: 28px — equidistant --text-xl (24px)/--text-2xl (32px), no
+     matching token, kept literal. */
+  font-size: 28px;
+}
+
+.eyebrow {
+  /* font-size: 13px — equidistant --text-xs (12px)/--text-sm (14px). */
+  font-size: 13px;
+  /* letter-spacing: .1em — no --tracking-* token matches (.08/.16em). */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 28px — equidistant --space-5 (24px)/--space-6 (32px), kept literal. */
+  gap: 28px;
+}
+
+/* --bp-tablet, styles/tokens/breakpoints.css */
+@media (max-width: 960px) {
+  .section {
+    /* Approved tablet contraction, see out.md stage-1 round: both values
+       are exact matches (32px = --space-6, 64px = --space-8). */
+    padding: 0 var(--space-6) var(--space-8);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6); /* 32px, exact match */
+  }
+}
+
+/* --bp-mobile, styles/tokens/breakpoints.css */
+@media (max-width: 599px) {
+  .section {
+    /* Approved mobile contraction, see out.md stage-1 round. 48px is an
+       exact match (--space-7); that round's writeup described 20px as also
+       "matching the --space-* scale," but it doesn't — it's equidistant
+       between --space-4 (16px) and --space-5 (24px) — so it's kept as a
+       literal here rather than perpetuating that mislabel. */
+    padding: 0 20px var(--space-7);
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-5); /* 24px, exact match */
+  }
+}

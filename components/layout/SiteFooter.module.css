@@ -1,7 +1,12 @@
 .footer {
   background: var(--surface-inverse);
   color: var(--text-inverse);
-  padding: var(--space-7);
+  /* Source (design/LandingPage.dc.html:44) is 56px 48px. 48px matches
+     --space-7 exactly; 56px sits equidistant between --space-7 (48px) and
+     --space-8 (64px) with no matching token, so it stays a literal rather
+     than being rounded down (and the source's vertical/horizontal
+     asymmetry is preserved, not flattened to a uniform value). */
+  padding: 56px var(--space-7);
   display: flex;
   justify-content: space-between;
   align-items: center;

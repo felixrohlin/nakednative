@@ -19,7 +19,10 @@
 .input {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  padding: var(--space-3) var(--space-4);
+  /* Source (Input.jsx) is 12px 14px. 12px matches --space-3 exactly; 14px
+     sits equidistant between --space-3 (12px) and --space-4 (16px) with no
+     matching token, so it stays a literal rather than being rounded up. */
+  padding: var(--space-3) 14px;
   border: var(--border-w) solid var(--border-subtle);
   border-radius: var(--radius-sm);
   outline: none;
