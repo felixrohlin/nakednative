@@ -1,0 +1,22 @@
+:root{
+--font-display:var(--font-jost), sans-serif;
+--font-body:var(--font-work-sans), sans-serif;
+--text-xs:.75rem;
+--text-sm:.875rem;
+--text-base:1rem;
+--text-lg:1.25rem;
+--text-xl:1.5rem;
+--text-2xl:2rem;
+--text-3xl:2.75rem;
+--text-4xl:3.75rem;
+--text-5xl:5rem;
+--leading-tight:1.05;
+--leading-snug:1.25;
+--leading-normal:1.55;
+--tracking-wide:.08em;
+--tracking-wider:.16em;
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+}

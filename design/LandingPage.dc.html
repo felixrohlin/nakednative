@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Naked Native — Landing Page" description="Full homepage: hero, brand story, product grid, footer" -->
+<helmet><script src="./ds-base.js"></script></helmet>
+<div style="font-family:var(--font-body);background:var(--surface-page);color:var(--text-primary)">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border-subtle)">
+<img src="assets/logo-wordmark.png" style="height:22px">
+<div style="display:flex;gap:32px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary)">
+<span>Shop</span><span>Journal</span><span>Our Story</span><span>Cart (2)</span>
+</div>
+</div>
+<div style="position:relative;height:640px;overflow:hidden">
+<img src="assets/photo-lifestyle-mountain.jpg" style="width:100%;height:100%;object-fit:cover;object-position:60% 30%">
+<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,29,36,.55),rgba(27,29,36,0) 60%)"></div>
+<div style="position:absolute;left:48px;bottom:56px;color:var(--nn-sand-50);max-width:520px">
+<div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:14px">Fair Trade · Eco Lifestyle</div>
+<div style="font-family:var(--font-display);font-size:56px;line-height:1.05;font-weight:600;margin-bottom:20px">Naked Native</div>
+<div style="font-size:17px;line-height:1.5;margin-bottom:28px;opacity:.92">Quality goods sewn from an ethical thread — for the surf, the mountains, and everywhere between.</div>
+<x-import component-from-global-scope="NakedNativeDesignSystem_4d778f.Button" variant="accent" size="lg">Shop the Collection</x-import>
+</div>
+</div>
+<div style="padding:88px 48px;text-align:center;max-width:720px;margin:0 auto">
+<div style="font-family:var(--font-display);font-size:32px;margin-bottom:20px">Brought to you by Scandinavian frothers</div>
+<p style="font-size:17px;line-height:1.6;color:var(--text-secondary)">Inspired by our native heritage, we bring you quality goods sewn from an ethical thread. Committed to transparent supply chains and grass-root social development — a new way of doing business.</p>
+</div>
+<div style="padding:0 48px 96px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px">
+<div style="font-family:var(--font-display);font-size:28px">The Fjord Poncho</div>
+<div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">3 colorways</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+<x-import component-from-global-scope="NakedNativeDesignSystem_4d778f.ProductCard" image="./assets/product-poncho-green-front.jpg" name="Fjord Poncho" colorway="Moss Green" price="$128"></x-import>
+<x-import component-from-global-scope="NakedNativeDesignSystem_4d778f.ProductCard" image="./assets/product-poncho-grey-side.jpg" name="Fjord Poncho" colorway="Heather Grey" price="$128"></x-import>
+<x-import component-from-global-scope="NakedNativeDesignSystem_4d778f.ProductCard" image="./assets/product-poncho-navy-side.jpg" name="Fjord Poncho" colorway="Midnight Navy" price="$128"></x-import>
+</div>
+</div>
+<div style="background:var(--nn-navy-900);color:var(--nn-sand-50);padding:56px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+<img src="assets/logo-mark.png" style="height:56px;filter:invert(1) brightness(1.6)">
+<div style="max-width:340px">
+<div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;opacity:.8">Join the tribe</div>
+<x-import component-from-global-scope="NakedNativeDesignSystem_4d778f.Input" placeholder="you@example.com"></x-import>
+</div>
+<div style="display:flex;gap:32px;font-size:14px;opacity:.85">
+<span>Shipping</span><span>Returns</span><span>Contact</span>
+</div>
+</div>
+</div>
+
+</x-dc>
+</body>
+</html>

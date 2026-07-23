@@ -1,0 +1,15 @@
+:root{
+--bp-tablet:960px;
+--bp-mobile:599px;
+}
+
+/*
+ * CSS custom properties cannot be read inside an @media feature value —
+ * this is a spec limitation, no browser resolves var() there. So these
+ * tokens are the source of truth for JS breakpoint checks (e.g. the nav
+ * hamburger's matchMedia call), while every @media rule elsewhere in this
+ * codebase must repeat the literal and stay in sync with the values above:
+ *
+ *   @media (max-width: 960px) { ... }   // matches --bp-tablet
+ *   @media (max-width: 599px) { ... }   // matches --bp-mobile
+ */
