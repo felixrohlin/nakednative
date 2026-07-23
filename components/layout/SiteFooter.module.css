@@ -1,0 +1,64 @@
+.footer {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  padding: var(--space-7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.mark {
+  filter: invert(1) brightness(1.6);
+  flex-shrink: 0;
+}
+
+.newsletter {
+  max-width: 340px;
+  flex: 1 1 260px;
+}
+
+.newsletterLabel {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+  opacity: 0.8;
+}
+
+.links {
+  display: flex;
+  gap: var(--space-6);
+  font-size: var(--text-sm);
+  opacity: 0.85;
+}
+
+.links span {
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.links span:hover {
+  opacity: 1;
+}
+
+/* --bp-tablet, styles/tokens/breakpoints.css — var() can't resolve inside
+   an @media feature value, so the literal is repeated here by convention. */
+@media (max-width: 960px) {
+  .footer {
+    padding: var(--space-5);
+  }
+}
+
+/* --bp-mobile, styles/tokens/breakpoints.css */
+@media (max-width: 599px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter {
+    max-width: none;
+    width: 100%;
+  }
+}
